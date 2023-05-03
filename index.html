@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Its a web page of reviews of all kind">
+  <meta name="keywords" content="Movies,Reviews,Series,Magazine,Books,Blogs">
+  <meta name="author" content="Nicolas Orozco,Paulo Sainz and Gael Villagroy">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>MaFaborit</title>
+</head>
+
+<body>
+  <section class="greet">
+    <div>MaFaborit</div>
+    <div>
+      <ul class="greet_items">
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="series.html">Series</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="songs.html">Songs</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="magazine.html">Magazine</a></li>
+      </ul>
+    </div>
+  </section>
+  <hr />
+  <h2>Your "faborit" reviews, all in place, by real customers</h2>
+  <!-- SLIDER CARROUSEL -->
+  <section class="slider-wrapper">
+    <button class="slide-arrow" id="slide-arrow-prev">
+      &#8249;
+    </button>
+
+    <button class="slide-arrow" id="slide-arrow-next">
+      &#8250;
+    </button>
+
+    <ul class="slides-container" id="slides-container">
+      <li class="slide">
+        <div class="review">
+          <p>
+            The story is filled with larger-than-life characters, dramatic plot twists, and grandiose schemes of
+            revenge, which can come across as unrealistic or exaggerated. Some readers may find the book's style to be
+            overly sentimental or sensationalistic, and the portrayal of the characters to be stereotypical or
+            one-dimensional.
+          </p>
+          <div class="review_bottom">
+            <p>6/10</p>
+            <div>
+              <p>Alex Dumas.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="slide">
+        <div class="review">
+          <p>
+            The Hobbit is the worst movie ever created, the contruction just don't make sense comparing it to the book,
+            what a dissapointment.
+          </p>
+          <div class="review_bottom">
+            <p>1/10</p>
+            <div>
+              <p>Garcia.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="slide">
+        <div class="review">
+          <p>
+            Forbes is a really great magazien because there you can see a lot of things of technology and stuff of
+            fashion so you can always be so fashion and everyone wants to be like you.
+          </p>
+          <div class="review_bottom">
+            <p>9/10</p>
+            <div>
+              <p>Ganso.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="slide">
+        <div class="review">
+          <p>
+            The film features great animation and an attractive soundtrack, which includes songs by artists
+            like Sheryl Crow and Rascal Flatts. In addition, it has a great cast of voices, including Owen Wilson.
+            as Lightning McQueen, Larry the Cable Guy as Mater, and Bonnie Hunt as Sally.
+          </p>
+          <div class="review_bottom">
+            <p>10/10</p>
+            <div>
+              <p>Celis.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <hr />
+  <section class="apply">
+    <div class="apply_benefits">
+      <p>Wanna know about us? </p>
+      <div>
+
+        <p>Here are our information:</p>
+        <ul>
+          <li>3 Young entrepeneurs </li>
+          <li>Webiste that helps out with the reviews you need</li>
+          <li>Masterclasses from world-known artists</li>
+          <li>The best community</li>
+          <li>Opportunities to enter your market</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <style>
+    .slider-wrapper {
+      margin: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides-container {
+      height: 300px;
+      width: 100%;
+      display: flex;
+      overflow: scroll;
+      scroll-behavior: smooth;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .slide-arrow {
+      position: absolute;
+      display: flex;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 4rem;
+      background-color: white;
+      border: none;
+      width: 2rem;
+      font-size: 3rem;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 100ms;
+    }
+
+    .slide-arrow:hover,
+    .slide-arrow:focus {
+      opacity: 1;
+    }
+
+    #slide-arrow-prev {
+      left: 0;
+      padding-left: 0.25rem;
+      border-radius: 0 2rem 2rem 0;
+    }
+
+    #slide-arrow-next {
+      right: 0;
+      padding-left: 0.75rem;
+      border-radius: 2rem 0 0 2rem;
+    }
+
+    .slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 0 100%;
+      font-size: large;
+      text-align: center;
+    }
+  </style>
+  <script>
+    const slidesContainer = document.getElementById("slides-container");
+    const slide = document.querySelector(".slide");
+    const prevButton = document.getElementById("slide-arrow-prev");
+    const nextButton = document.getElementById("slide-arrow-next");
+
+    nextButton.addEventListener("click", () => {
+      const slideWidth = slide.clientWidth;
+      slidesContainer.scrollLeft += slideWidth;
+    });
+
+    prevButton.addEventListener("click", () => {
+      const slideWidth = slide.clientWidth;
+      slidesContainer.scrollLeft -= slideWidth;
+    });
+  </script>
+</body>
+
+</html>
